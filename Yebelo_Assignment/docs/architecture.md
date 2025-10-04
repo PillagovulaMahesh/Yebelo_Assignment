@@ -31,7 +31,25 @@ We are building a **real-time trading analytics system** with the following pipe
      - Numeric display for current price and RSI.  
    - Subscribes to WebSocket to receive live updates.
 
+
+
 ---
 
-## Architecture Diagram
+## Technologies
 
+| Component        | Technology |
+|------------------|------------|
+| Containerization | Docker     |
+| Broker           | Redpanda   |
+| Ingestion        | Node.js    |
+| Backend          | Rust       |
+| Charts           | Recharts   |
+| Frontend         | Next.js TS |
+| Hosting          | Vercel     |
+
+---
+
+## Key Assumptions
+- RSI is calculated using a **simple sliding-window average** over 14 prices (not Wilder’s smoothing).  
+- WebSocket forwarder is used because browsers cannot natively connect to Kafka.  
+- The system currently replays **historical data** (`trades_data.csv`) instead of true live data.  
