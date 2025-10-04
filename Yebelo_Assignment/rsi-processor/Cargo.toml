@@ -1,0 +1,13 @@
+[package]
+name = "rsi-processor"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.40", features = ["full"] }
+futures = "0.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rdkafka = { version = "0.36", features = ["tokio", "cmake-build"] }
+log = "0.4"
+env_logger = "0.11"
